@@ -1,0 +1,588 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Hachi+Maru+Pop&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Science+Gothic:wght@100..900&display=swap');
+
+body{
+     background-image: linear-gradient(to bottom, rgb(0, 5, 70), rgb(17, 0, 94), rgb(0, 0, 0));
+}
+
+
+.container .box
+{
+  position: relative;
+  width: 320px;
+  height: 400px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin: 40px 30px;
+  transition: 0.5s;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 1%;
+  border-radius: 70px;
+}
+
+.container .box::before
+{
+  content:' ';
+  position: absolute;
+  top: 0;
+  left: 50px;
+  width: 50%;
+  height: 100%;
+  text-decoration: none;
+  background: #fff;
+  border-radius: 8px;
+  transform: skewX(15deg);
+  transition: 0.5s;
+}
+
+.container .box::after
+{
+  content:'';
+  position: absolute;
+  top: 0;
+  left: 50;
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  border-radius: 8px;
+  transform: skewX(15deg);
+  transition: 0.5s;
+  filter: blur(30px);
+}
+
+.container .box:hover:before,
+.container .box:hover:after
+{
+  transform: skewX(0deg);
+  left: 20px;
+  width: calc(100% - 90px);
+  
+}
+
+.container .box:nth-child(1):before,
+.container .box:nth-child(1):after
+{
+  background: linear-gradient(315deg, #000e5f, #000000)
+}
+
+.container .box:nth-child(2):before,
+.container .box:nth-child(2):after
+{
+  background: linear-gradient(315deg, #000e5f, #000000)
+}
+
+.container .box span
+{
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.container .box span::before
+{
+  content:'';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-radius: 8px;
+  background: rgba(10, 0, 122, 0.266);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: 0.1s;  
+  animation: animate 2s ease-in-out infinite;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08)
+}
+
+.container .box:hover span::before
+{
+  top: -50px;
+  left: 50px;
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+}
+
+.container .box span::after
+{
+  content:'';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: rgba(0, 0, 28, 0.331);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: 0.5s;
+  animation: animate 2s ease-in-out infinite;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  animation-delay: -1s;
+}
+
+.container .box:hover span:after
+{
+  bottom: -50px;
+  right: 50px;
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+}
+
+@keyframes animate
+{
+  0%, 100%
+  {
+    transform: translateY(10px);
+  }
+  
+  50%
+  {
+    transform: translate(-10px);
+  }
+}
+
+.container .box .content
+{
+  position: relative;
+  left: 0;
+  padding: 10px 4px;
+  background: rgba(212, 197, 197, 0.05);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1;
+  transform: 0.5s;
+  color: #fff;
+}
+
+.container .box:hover .content
+{
+  left: -25px;
+  padding: 60px 40px;
+}
+
+.container .box .content h2
+{
+  font-size: 2em;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.container .box .content p
+{
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  line-height: 1.4em;
+}
+
+.container .box .content a
+{
+  display: inline-block;
+  font-size: 1.1em;
+  color: #000000;
+  background: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
+  margin-top: 5px;
+  transition: .5s;
+}
+
+.container .box .content a:hover
+{
+  background: #000874;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 15px rgba(1, 1, 1, 0.2);
+}
+
+  .container-002{
+    width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 15px;
+    margin: 0 auto;
+  }
+
+header{
+    text-align: center;
+    background-image: linear-gradient(to right, #000000, rgb(0, 1, 85), rgb(0, 7, 68), rgb(0, 0, 0));
+    margin: 12px;
+    padding: 10px;
+    border-radius: 30px;
+    box-shadow: 12px 12px 30px black;
+  }
+
+header > h1{
+    position: relative;
+    left: 1%;
+    font-weight: bold;
+    color: rgb(36, 3, 250);
+    font-family: monospace;
+}
+
+header  p{
+    color: rgb(17, 44, 243);
+    font-family: monospace;
+    position: relative;
+    top: 12%;
+    left: 1%;
+}
+
+nav{
+    text-align: center;
+    margin-top: 10px;
+    padding: 1px;
+    margin: 12px;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    background: transparent;
+    color: rgb(36, 3, 250);
+    border-radius: 10px;
+}
+
+nav > a{
+    text-decoration: none;
+    color: rgb(36, 3, 250);
+    font-family: monospace;
+    margin: 15px;
+    padding: 10px;
+    border-radius: 150px;
+    transition: .5s;
+}
+
+nav > a:hover{
+    box-shadow: inset 0 15px 20px rgb(0, 22, 145);
+    color: rgb(255, 255, 255);
+}
+
+main{
+    background-image: linear-gradient(to bottom, rgb(0, 0, 7), rgb(0, 5, 80), rgb(6, 0, 43));
+    text-align: justify;
+    margin: 12px;
+    padding: 10%;
+    border-radius: 12px;
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 12px 12px 30px black;
+    border-radius: 70px 0px;
+}
+
+main  h2{
+    color: rgb(18, 0, 214);
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 12px;
+    text-shadow: 5px 5px 0px black;
+}
+
+main p{
+    font-size: 20px;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 12px;
+    color: rgb(145, 153, 170);
+}
+
+aside{
+    text-align: justify;
+    margin: 12px;
+    margin-top: 50px;
+    padding: 10px;
+    border-radius: 12px;
+    background: transparent;
+    background-image: linear-gradient(to bottom, rgb(0, 1, 19), rgb(0, 0, 0), rgb(3, 0, 23));
+    text-align: justify;
+    padding: 10%;
+    border-radius: 12px;
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 12px 12px 30px black;
+    border-radius: 70px;
+    cursor: pointer;
+}
+
+aside h3{
+  margin-top: 100px;
+    color: rgb(18, 0, 214);
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 12px;
+    text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.317);
+}
+
+ul {
+    list-style-type: none;
+    color: rgb(0, 6, 128);
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+aside li{
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.li-1{
+    color: orange;
+    font-weight: bold;
+    position: relative;
+    right: 12%;
+    padding: 12px;
+    background-image: linear-gradient(to right, transparent, #000039, #0e2c70, transparent);
+    transition: .6s;
+}
+
+.li-1:hover{
+  background-color: #000e5f;
+  color: #ffffff;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 10px 20px;
+}
+
+.li-2:hover{
+  background-color: #000e5f;
+  color: #ffffff;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 10px 20px;
+}
+
+.li-3:hover{
+  background-color: #000e5f;
+  color: #ffffff;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 10px 20px;
+}
+
+.li-4:hover{
+  background-color: #000e5f;
+  color: #ffffff;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 10px 20px;
+}
+
+.li-5:hover{
+  background-color: #000e5f;
+  color: #ffffff;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 10px 20px;
+}
+
+.li-6:hover{
+  background-color: #000e5f;
+  color: #ffffff;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 10px 20px;
+}
+
+.li-7:hover{
+  background-color: #000e5f;
+  color: #ffffff;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 10px 20px;
+}
+
+.li-8:hover{
+  background-color: #000e5f;
+  color: #ffffff;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 10px 20px;
+}
+
+.li-2{
+    color: rgb(49, 121, 255);
+    font-weight: bold;
+    position: relative;
+    right: 9%;
+    padding: 10px;
+    font-weight: bold;
+    background-image: linear-gradient(to right, transparent, #000039, #0e2c70, transparent);
+    transition: .6s;
+}
+
+.li-3{
+    color: rgb(255, 102, 0);
+    font-weight: bold;
+    position: relative;
+    right: 4%;
+    padding: 10px;
+    background-image: linear-gradient(to right, transparent, #000039, #0e2c70, transparent);
+    transition: .6s;
+}
+
+.li-4{
+    color: rgb(0, 179, 255);
+    font-weight: bold;
+    position: relative;
+    right: 0%;
+    padding: 10px;
+    background-image: linear-gradient(to right, transparent, #000039, #0e2c70, transparent);
+    transition: .6s;
+}
+
+.li-5{
+    padding: 10px;
+    color: orange;
+    font-weight: bold;
+    position: relative;
+    left: 2%;
+    background-image: linear-gradient(to right, transparent, #000039, #0e2c70, transparent);
+    transition: .6s;
+}
+
+.li-6{
+    color: yellow;
+    font-weight: bold;
+    position: relative;
+    padding: 10px;
+    left: 5%;
+    background-image: linear-gradient(to right, transparent, #000039, #0e2c70, transparent);
+    transition: .6s; 
+}
+
+.li-7{
+  padding: 10px;
+    color: red;
+    font-weight: bold;
+    position: relative;
+    left: 9%;
+  background-image: linear-gradient(to right, transparent, #000039, #0e2c70, transparent);
+  transition: .6s;
+}
+
+.li-8{
+    color: green;
+    font-weight: bold;
+    position: relative;
+    left: 12%;
+    padding: 10px;
+    background-image: linear-gradient(to right, transparent, #000039, #0e2c70, transparent);
+    transition: .6s;
+}
+
+.text{
+ color: #0800ff;
+ font-weight: 900;
+ padding: 20px;
+ margin-top: 50px;
+ border: 1px dotted rgb(30, 0, 255);
+ border-radius: 10px 20px;
+}
+
+.footer{
+  background-color: #000039;
+  padding: 10px;
+  color: rgb(105, 108, 124);
+  font-weight: bold;
+  text-align:center;
+  border-radius:40px 40px 0px 0px;
+   background-image: linear-gradient(to bottom, rgb(0, 6, 91), rgb(10, 0, 64), rgb(3, 0, 26));
+}
+
+button{
+  background-color: transparent;
+  font-size: 30px;
+  border: 1px;
+  color: #7a7a7a;
+  transition: .5s;
+  position: relative;
+  cursor: pointer;
+}
+button:hover{
+  background-color: transparent;
+  color: #000000;
+  border-radius: 20px;
+}
+
+.ic-1{
+  font-size: 40px;
+  margin-top: 10px;
+  color: rgb(0, 72, 255);
+}
+
+.ic-1:hover{
+  color: rgb(0, 179, 255);
+}
+
+.ic-2{
+  font-size: 40px;
+  margin-top: 10px;
+  background-image: linear-gradient(to bottom, rgb(85, 0, 255), rgb(204, 0, 255), #ff00c8, rgb(255, 0, 150), rgb(255, 0, 85), rgb(255, 0, 0), rgb(255, 85, 0), rgb(255, 170, 0), rgb(255, 255, 0));
+  background-clip: text;
+  color: transparent;
+}
+
+.ic-2:hover{
+  color: rgb(255, 0, 150);
+}
+
+.ic-3{
+  font-size: 40px;
+  margin-top: 10px;
+  color: white;
+}
+
+.icons{
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.whats{
+  color: rgb(37, 255, 0);
+  text-align: center;
+  margin-top: 30px;
+  font-size: 15px;
+}
+
+.sec-hero button{
+   border-radius: 20px;
+   padding: 20px;
+   width: 250px;
+   margin-top: 12px;
+   font-family: fantasy;
+   font-size: 15px;
+   border: 2px solid black;
+   background-color: rgb(0, 15, 128);
+   color: white;
+   transition: 0.4s;
+   cursor: pointer;
+   box-shadow: 12px 12px 1px black;
+}
+
+.sec-hero button:hover{
+    background-image: linear-gradient(to bottom, rgb(0, 63, 172), rgba(0, 16, 188, 0.474), rgba(0, 0, 0, 0.93));
+    color: rgb(0, 0, 0);
+}
+
+mark{
+    background: transparent;
+    color: rgb(216, 211, 210);
+    font-weight: bold;
+    padding: 2px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+mark:hover{
+    background-color: rgba(255, 255, 255, 0.623);
+    color: rgb(0, 1, 58);
+    box-shadow: 0 0 1px rgb(0, 72, 255);
+}
